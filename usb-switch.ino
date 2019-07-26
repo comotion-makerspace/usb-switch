@@ -1,25 +1,31 @@
 int relayPin = 5;
-int usbDetectPin = 6;
+int ledPin = 6;
 int button = 7; 
 
+int relay = 0;
+
 void setup() {
-  // put your setup code here, to run once:
-  pinMode(relayPin, INPUT);
-  pinMode(usbDetectPin, INPUT); // 
-  pinMode(button, OUTPUT); // 
+  pinMode(ledPin, INPUT); 
+  pinMode(button, OUTPUT);
   Serial.begin(9600);
 }
 
+/*
+ * LED = 0 -> Computer ON
+ * LED = 1 -> Computer OFF
+ */
+
 void loop() {
   // put your main code here, to run repeatedly:
-  // digital read in on pin 2 for input if it's high then toggle
-  int relay = digitalRead(relayPin);
-  int usbDetect = digitalRead(usbDetectPin);
-  if ( (relay && !usbDetect ) || (!relay && usbDetect) ) {
+  //int relay = digitalRead(relayPin);
+
+  delay(500);
+  int led = digitalRead(ledPin);
+  if ( (relay && led ) || (!relay && !led) ) {
     pressButton();
   }
-  Serial.println("RELAY: " + (String)relay + " USB: " + (String)usbDetect);
-  
+  Serial.println("RELAY: " + (String)relay + " LED: " + (String)led );
+//  Serial.println("BUTTON: " + (String)button + " LED: " + (String)led );
 }
 
 void pressButton(){
