@@ -1,2 +1,2 @@
 # usb-switch
-![Arduino, USB, Breadboard](media/arduino_switch_breadboard.jpg?raw=true "Arduino, USB, Breadboard")
+![Arduino, USB Switch](media/arduino_switch.jpg?raw=true "Arduino, USB Switch")
