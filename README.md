@@ -18,9 +18,9 @@ if the relay and the led aren't the same value, we press the button, which makes
 By following this guide you too can hack a USB switch which will allow you to use an arduino to programmatically control it!
 
 ### Materials
-* ![Arduino Uno](https://amzn.to/2OqPTH5)
-* ![USB Switch](https://amzn.to/2Yb0qdT)
-* ![Fabman Bridge](http://bit.ly/2OseD1t) (we did this on v1 but v2 may also work!)
+* [Arduino Uno](https://amzn.to/2OqPTH5)
+* [USB Switch](https://amzn.to/2Yb0qdT)
+* [Fabman Bridge](http://bit.ly/2OseD1t) (we did this on v1 but v2 may also work!)
 * Hot glue gun & glue
 * Soldering materials ➡️ hookup wire, solder, soldering iron, etc.
 * Painter's tape or sharpie for labeling
@@ -28,17 +28,17 @@ By following this guide you too can hack a USB switch which will allow you to us
 ### Steps
 
 #### Arduino
-1. Upload the code ![here](src/usb_switch.ino) in the Arduino application to the Arduino Uno. You may need to select the board/port settings which you can search the net for.
-2. Unplug the arduino, do the steps in ![USB Switch](#usb-switch) directly below and come back to step 3.
+1. Upload the code [here](src/usb_switch.ino) in the Arduino application to the Arduino Uno. You may need to select the board/port settings which you can search the net for.
+2. Unplug the arduino, do the steps in [USB Switch](#usb-switch) directly below and come back to step 3.
 3. This is a simplification from the USB switch, but hopefully this makes sense: plug the hookup wire from the USB Switch into the following inputs on the Arduino:
-![Arduino USB Switch Diagram](media/arduino_usb_switch_diagram.jpg "Arduino USB Switch Diagram")
+[Arduino USB Switch Diagram](media/arduino_usb_switch_diagram.jpg "Arduino USB Switch Diagram")
 Ensure that you get the positive and ground connections on the button correct. I made this circuit as if you're seeing it with the USB switch in front of you, with the single USB A port facing you and the two USB B ports facing away.
 1. You can test the connections by editing the _usb-switch.ino_ code. Uncomment the lines with button set to `INPUT` and the line with `Serial.println()` containing the string `"button"`. Then comment out the line with button set to `OUTPUT` and the single `if` condition. If you have issues, you may need to comment out other lines referenced. If everything works, when you open up the serial console on Arduino and begin pressing the button on the USB switch, you should see a change from 0 to 1 or 1 to 0 on the serial monitor. In addition, you'll see the LED change its value from 0 to 1 or 1 to 0 on the serial monitor.
-2. If you can successfully read the button, you should be able to use the `pressButton()` function as well. You can go ahead and upload the code again ![here](src/usb_switch.ino) to erase the changes that were made by switching the button from an `OUTPUT` to an `INPUT`, which will allow you to now simulate the button press from the Arduino! You can now go to the ![Fabman](#Fabman) section directly below, or if you have another way that you'd like to trigger the switch, you can do that instead.
+2. If you can successfully read the button, you should be able to use the `pressButton()` function as well. You can go ahead and upload the code again [here](src/usb_switch.ino) to erase the changes that were made by switching the button from an `OUTPUT` to an `INPUT`, which will allow you to now simulate the button press from the Arduino! You can now go to the [Fabman](#Fabman) section directly below, or if you have another way that you'd like to trigger the switch, you can do that instead.
 
 #### USB Switch
 1. Solder hookup wire to LED, button inputs using reflow (TODO will detail this when I learn how to do it!) & ensure it's the correct LED on the board...
-2. Go to the ![Arduino](#Arduino) directions directly above and continue
+2. Go to the [Arduino](#Arduino) directions directly above and continue
 
 #### Fabman
 1. I created another simplified diagram which you can use to understand how to hookup the Fabman bridge to the Arduino. **Ensure you put a `1kΩ` - `10kΩ` resistor on the 5v line!** The difference between the Fabman Bridge and this is that you'll hookup the 5v and the data line to the `S` terminal and the ground cable to the `O` terminal. Use the hookup wire to make the following connections:
@@ -62,4 +62,4 @@ The full circuit is simplified to look like the following:
 
 ## 💻 Contributing
 
-If you have any ideas or contributions feel free to open a PR ![here](http://bit.ly/2OrM4kY)!
+If you have any ideas or contributions feel free to open a PR [here](http://bit.ly/2OrM4kY)!
