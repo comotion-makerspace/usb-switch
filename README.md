@@ -45,7 +45,7 @@ USB B:
 ![USB B pinout](https://rodolfo3.files.wordpress.com/2014/02/usb-b-pinout.jpg)  
 USB A (check the "Cable" part):  
 ![USB A pinout](https://www.doityourselfchristmas.com/wiki/images/f/fe/Usb_pinout.jpg)  
-    2. We need to hookup only the VCC and GND pins to successfully trick the switch. Here's how I've soldered my pins. To keep things consistent, ensure that you choose the same USB B port as this one:
+    2. We need to hookup only the VCC and GND pins to successfully trick the switch. Here's how I've soldered my pins. To keep things consistent, ensure that you choose the same USB B port as this one:  
     before soldering:
     ![usb_switch_not_soldered](media/usb_switch_not_soldered.jpg)  
     after soldering:  
