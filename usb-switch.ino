@@ -1,36 +1,36 @@
-int relayPin = 5;
 int ledPin = 6;
-int button = 7; 
-
-int relay = 0;
+int buttonPin = 7;
+int relayPin = 8;
 
 void setup() {
+  pinMode(relayPin, INPUT);
   pinMode(ledPin, INPUT); 
-  pinMode(button, OUTPUT);
+  pinMode(buttonPin, OUTPUT);
+//pinMode(buttonPin, INPUT); // used for debugging button
   Serial.begin(9600);
 }
 
 /*
+ * RELAY = 0 -> Fabman ON
+ * RELAY = 1 -> Fabman OFF
+ * 
  * LED = 0 -> Computer ON
  * LED = 1 -> Computer OFF
  */
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  //int relay = digitalRead(relayPin);
-
-  delay(500);
+  int relay = digitalRead(relayPin);
   int led = digitalRead(ledPin);
-  if ( (relay && led ) || (!relay && !led) ) {
+  Serial.println("RELAY: " + (String)relay + " LED: " + (String)led );
+  if ( (relay && !led ) || (!relay && led) ) {
     pressButton();
   }
-  Serial.println("RELAY: " + (String)relay + " LED: " + (String)led );
-//  Serial.println("BUTTON: " + (String)button + " LED: " + (String)led );
+  delay(500);
+//  Serial.println("button: " + (String)digitalRead(buttonPin) + " LED: " + (String)led ); // used for debugging button
 }
-
 void pressButton(){
-  Serial.println("Button pressed!");
-  digitalWrite(button, HIGH);
+  Serial.println("button pressed!");
+  digitalWrite(buttonPin, HIGH);
   delay(100);
-  digitalWrite(button, LOW);
+  digitalWrite(buttonPin, LOW);
 }
