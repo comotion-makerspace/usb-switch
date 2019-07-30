@@ -41,10 +41,10 @@ Ensure that you get the positive and ground connections on the button correct. I
 #### USB Switch
 1. Optional but read this: if you don't want two things to be plugged into the USB switch at the same time in the USB B ports, you can hack the switch to allow voltage to pass over the USB A port to trick the switch into thinking there's a device plugged into the second port. If you don't want to solder this, you can plug a powered device into this port which will allow the switch to work. If you don't plug anything into both ports none of this will work; the switch is "intelligent" in that it will only switch if it detects there's a device on the other port. We can trick it though, which requires some soldering. Here's how:
     1. Use the following diagrams to understand the pinout of USB B and USB A on this board:  
-USB B:
-![USB B pinout](https://rodolfo3.files.wordpress.com/2014/02/usb-b-pinout.jpg)
-USB A (check the "Cable" part):
-![USB A pinout](https://www.doityourselfchristmas.com/wiki/images/f/fe/Usb_pinout.jpg)
+USB B:  
+![USB B pinout](https://rodolfo3.files.wordpress.com/2014/02/usb-b-pinout.jpg)  
+USB A (check the "Cable" part):  
+![USB A pinout](https://www.doityourselfchristmas.com/wiki/images/f/fe/Usb_pinout.jpg)  
     2. We need to hookup only the VCC and GND pins to successfully trick the switch. Here's how I've soldered my pins. To keep things consistent, ensure that you choose the same USB B port as this one:
     before soldering:
     ![usb_switch_not_soldered](media/usb_switch_not_soldered.jpg)  
